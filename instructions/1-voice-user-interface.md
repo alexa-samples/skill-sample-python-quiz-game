@@ -1,9 +1,9 @@
-# Build An Alexa Quiz Skill
+instructions# Build An Alexa Quiz Skill
 [![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-on._TTH_.png)](1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-off._TTH_.png)](2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](4-testing.md)
 
 ## Setting up Your Alexa Skill in the Developer Portal
 
-There are two parts to an Alexa skill. The first part is the [Voice User Interface (VUI)](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface), this is where we define how we will handle a user's voice input, and which code should be executed when specific commands are uttered.  The second part is the actual code logic for our skill, and we will handle that in [the next step](/step-by-step/2-lambda-function.md) of this guide.
+There are two parts to an Alexa skill. The first part is the [Voice User Interface (VUI)](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/defining-the-voice-interface), this is where we define how we will handle a user's voice input, and which code should be executed when specific commands are uttered.  The second part is the actual code logic for our skill, and we will handle that in [the next step](/instructions/2-lambda-function.md) of this guide.
 
 1.  **To get started, go to the [Amazon Developer Portal](http://developer.amazon.com).  In the top-right corner of the screen, click the "Sign In" button.**
 (If you don't already have an account, you will be able to create a new one for free.)
@@ -58,7 +58,7 @@ There are two parts to an Alexa skill. The first part is the [Voice User Interfa
 
     ![Add Intent Button](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/1-8-intents-button._TTH_.png)
 
-    OPTIONAL: You can choose to upload a file to fill out your interaction model. To do that for this sample click on the </> Code Editor tab and drag the JSON file, **IntentSchema.json**, from the speechAssets folder of the sample code to the cloud upload icon. Once you're done, click Apply Changes. You can follow along with the rest of steps to see how things work or move onto step 9.
+    OPTIONAL: You can choose to upload a file to fill out your interaction model. To do that for this sample click on the </> Code Editor tab and drag the JSON file, **en-US.json**, from the models folder of the sample code to the cloud upload icon. Once you're done, click Apply Changes. You can follow along with the rest of steps to see how things work or move onto step 9.
 
 9.  Select **Use an existing intent from the built-in library**. In the text-box provided enter **AMAZON.StartOverIntent** or select that intent from the list of matching intents as they appear, then click the **Add Intent** button.
 
