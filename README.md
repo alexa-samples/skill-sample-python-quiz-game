@@ -14,8 +14,8 @@ Build An Alexa Quiz Skill in Python using ASK Python SDK
 ## What You Will Need
 *  [Amazon Developer Portal Account](http://developer.amazon.com)
 *  [Amazon Web Services Account](http://aws.amazon.com/)
-*  The sample code on [GitHub](https://github.com/alexa-labs/skill-sample-python-quiz-game).
-*  [ASK Python SDK](https://github.com/alexa-labs/alexa-skills-kit-sdk-for-python)
+*  The sample code on [GitHub](https://github.com/alexa/skill-sample-python-quiz-game).
+*  [ASK Python SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-python)
 *  A basic understanding of Python.
 
 ## What Your Skill Will Do
