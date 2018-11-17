@@ -182,7 +182,7 @@ class DefinitionHandler(AbstractRequestHandler):
 
         response_builder = handler_input.response_builder
         fact = utils.get_random_true_fact()
-        response_builder.speak(util.get_speech_description(fact)).ask(fact)
+        response_builder.speak(fact).ask(fact)
 
         return response_builder.response
 
