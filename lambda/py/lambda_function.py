@@ -179,43 +179,10 @@ class DefinitionHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In DefinitionHandler")
-        # TODO: ADD HANDLER FOR ROBOTS
+
         response_builder = handler_input.response_builder
-        item, is_resolved = util.get_item(
-            slots=handler_input.request_envelope.request.intent.slots,
-            states_list=data.STATES_LIST)
-
-        if is_resolved:
-            if data.USE_CARDS_FLAG:
-                response_builder.set_card(
-                    ui.StandardCard(
-                        title=util.get_card_title(item),
-                        text=util.get_card_description(item),
-                        image=ui.Image(
-                            small_image_url=util.get_small_image(item),
-                            large_image_url=util.get_large_image(item)
-                        )))
-
-            if util.supports_display(handler_input):
-                img = Image(
-                    sources=[ImageInstance(url=util.get_large_image(item))])
-                title = util.get_card_title(item)
-                primary_text = get_plain_text_content(
-                    primary_text=util.get_card_description(item))
-
-                response_builder.add_directive(
-                    RenderTemplateDirective(
-                        BodyTemplate2(
-                            back_button=BackButtonBehavior.VISIBLE,
-                            image=img, title=title,
-                            text_content=primary_text)))
-
-            response_builder.speak(
-                util.get_speech_description(item)).ask(data.REPROMPT_SPEECH)
-
-        else:
-            response_builder.speak(
-                util.get_bad_answer(item)).ask(util.get_bad_answer(item))
+        fact = utils.get_random_true_fact()
+        response_builder.speak(util.get_speech_description(fact)).ask(fact)
 
         return response_builder.response
 

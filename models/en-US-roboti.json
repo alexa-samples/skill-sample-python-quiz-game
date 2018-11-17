@@ -1,0 +1,362 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "echo minds",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswerIntent",
+          "samples": [
+            "tell me about ecology",
+            "what do you know about ecology",
+            "ecology information",
+            "ecology fact",
+            "information about ecology",
+            "fact about ecology",
+            "facts about ecology",
+            "ecology facts"
+          ]
+        },
+        {
+          "name": "QuizIntent",
+          "samples": [
+            "start a quiz",
+            "start a quiz game",
+            "and start a quiz",
+            "and quiz me",
+            "for a quiz",
+            "a quiz"
+          ]
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateSettingsIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NextIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollRightIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollLeftIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "AK"
+              }
+            },
+            {
+              "name": {
+                "value": "AL"
+              }
+            },
+            {
+              "name": {
+                "value": "AZ"
+              }
+            },
+            {
+              "name": {
+                "value": "AR"
+              }
+            },
+            {
+              "name": {
+                "value": "CA"
+              }
+            },
+            {
+              "name": {
+                "value": "CO"
+              }
+            },
+            {
+              "name": {
+                "value": "CT"
+              }
+            },
+            {
+              "name": {
+                "value": "DE"
+              }
+            },
+            {
+              "name": {
+                "value": "FL"
+              }
+            },
+            {
+              "name": {
+                "value": "GA"
+              }
+            },
+            {
+              "name": {
+                "value": "HI"
+              }
+            },
+            {
+              "name": {
+                "value": "ID"
+              }
+            },
+            {
+              "name": {
+                "value": "IL"
+              }
+            },
+            {
+              "name": {
+                "value": "IN"
+              }
+            },
+            {
+              "name": {
+                "value": "IA"
+              }
+            },
+            {
+              "name": {
+                "value": "KS"
+              }
+            },
+            {
+              "name": {
+                "value": "KY"
+              }
+            },
+            {
+              "name": {
+                "value": "LA"
+              }
+            },
+            {
+              "name": {
+                "value": "ME"
+              }
+            },
+            {
+              "name": {
+                "value": "MD"
+              }
+            },
+            {
+              "name": {
+                "value": "MA"
+              }
+            },
+            {
+              "name": {
+                "value": "MI"
+              }
+            },
+            {
+              "name": {
+                "value": "MN"
+              }
+            },
+            {
+              "name": {
+                "value": "MS"
+              }
+            },
+            {
+              "name": {
+                "value": "MO"
+              }
+            },
+            {
+              "name": {
+                "value": "MT"
+              }
+            },
+            {
+              "name": {
+                "value": "NE"
+              }
+            },
+            {
+              "name": {
+                "value": "NV"
+              }
+            },
+            {
+              "name": {
+                "value": "NH"
+              }
+            },
+            {
+              "name": {
+                "value": "NJ"
+              }
+            },
+            {
+              "name": {
+                "value": "NM"
+              }
+            },
+            {
+              "name": {
+                "value": "NY"
+              }
+            },
+            {
+              "name": {
+                "value": "NC"
+              }
+            },
+            {
+              "name": {
+                "value": "ND"
+              }
+            },
+            {
+              "name": {
+                "value": "OH"
+              }
+            },
+            {
+              "name": {
+                "value": "OK"
+              }
+            },
+            {
+              "name": {
+                "value": "OR"
+              }
+            },
+            {
+              "name": {
+                "value": "PA"
+              }
+            },
+            {
+              "name": {
+                "value": "RI"
+              }
+            },
+            {
+              "name": {
+                "value": "SC"
+              }
+            },
+            {
+              "name": {
+                "value": "SD"
+              }
+            },
+            {
+              "name": {
+                "value": "TN"
+              }
+            },
+            {
+              "name": {
+                "value": "TX"
+              }
+            },
+            {
+              "name": {
+                "value": "UT"
+              }
+            },
+            {
+              "name": {
+                "value": "VT"
+              }
+            },
+            {
+              "name": {
+                "value": "VA"
+              }
+            },
+            {
+              "name": {
+                "value": "WA"
+              }
+            },
+            {
+              "name": {
+                "value": "WV"
+              }
+            },
+            {
+              "name": {
+                "value": "WI"
+              }
+            },
+            {
+              "name": {
+                "value": "WY"
+              }
+            }
+          ],
+          "name": "US_STATE_ABBR"
+        }
+      ]
+    }
+  }
+}

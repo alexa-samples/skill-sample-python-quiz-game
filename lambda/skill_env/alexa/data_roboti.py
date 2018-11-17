@@ -27,7 +27,7 @@ QUIZ_START_MESSAGE = ('Welcome to the Eco Minds quiz! I will start stating {} '
                       'facts, to which you will have to reply with True of '
                       'False'.format(MAX_QUESTIONS))
 
-SCORE_STATUS = 'Your score is {} out of {}'
+SCORE_STATUS = 'Your score is {} out of {}.'
 
 FINAL_SCORE = 'All done! Your final score is {} out of {}! {}'
 
@@ -39,3 +39,8 @@ FINAL_GREETINGS = {
 HELP_MESSAGE = ('I know lots of things about ecology. You can ask me for facts '
                 'related to this or you can start a quiz.')
 
+FALLBACK_MESSAGE = 'Sorry, I cannot help you with that. {}'.format(HELP_MESSAGE)
+
+EXCEPTION_MESSAGE = 'Sorry. An error occurred. Please try again!'
+
+EXIT_MESSAGE = 'Bye! Hope to see you again soon!'

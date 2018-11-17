@@ -75,7 +75,7 @@ class HelpIntentHandler(AbstractRequestHandler):
         # Resetting session
 
         handler_input.response_builder.speak(
-            data.HELP_MESSAGE).ask(data.HELP_MESSAGE)
+            data_roboti.HELP_MESSAGE).ask(data_roboti.HELP_MESSAGE)
         return handler_input.response_builder.response
 
 
@@ -91,7 +91,7 @@ class ExitIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         logger.info("In ExitIntentHandler")
         handler_input.response_builder.speak(
-            data.EXIT_SKILL_MESSAGE).set_should_end_session(True)
+            data_roboti.EXIT_MESSAGE).set_should_end_session(True)
         return handler_input.response_builder.response
 
 
@@ -112,6 +112,7 @@ class QuizHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In QuizHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         attr["state"] = "QUIZ"
         attr["counter"] = 0
@@ -178,42 +179,10 @@ class DefinitionHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In DefinitionHandler")
+
         response_builder = handler_input.response_builder
-        item, is_resolved = util.get_item(
-            slots=handler_input.request_envelope.request.intent.slots,
-            states_list=data.STATES_LIST)
-
-        if is_resolved:
-            if data.USE_CARDS_FLAG:
-                response_builder.set_card(
-                    ui.StandardCard(
-                        title=util.get_card_title(item),
-                        text=util.get_card_description(item),
-                        image=ui.Image(
-                            small_image_url=util.get_small_image(item),
-                            large_image_url=util.get_large_image(item)
-                        )))
-
-            if util.supports_display(handler_input):
-                img = Image(
-                    sources=[ImageInstance(url=util.get_large_image(item))])
-                title = util.get_card_title(item)
-                primary_text = get_plain_text_content(
-                    primary_text=util.get_card_description(item))
-
-                response_builder.add_directive(
-                    RenderTemplateDirective(
-                        BodyTemplate2(
-                            back_button=BackButtonBehavior.VISIBLE,
-                            image=img, title=title,
-                            text_content=primary_text)))
-
-            response_builder.speak(
-                util.get_speech_description(item)).ask(data.REPROMPT_SPEECH)
-
-        else:
-            response_builder.speak(
-                util.get_bad_answer(item)).ask(util.get_bad_answer(item))
+        fact = utils.get_random_true_fact()
+        response_builder.speak(util.get_speech_description(fact)).ask(fact)
 
         return response_builder.response
 
@@ -239,6 +208,7 @@ class QuizAnswerHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In QuizAnswerHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         response_builder = handler_input.response_builder
 
@@ -364,6 +334,7 @@ class RepeatHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In RepeatHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         response_builder = handler_input.response_builder
         if "recent_response" in attr:
@@ -372,7 +343,9 @@ class RepeatHandler(AbstractRequestHandler):
                 cached_response_str, Response)
             return cached_response
         else:
-            response_builder.speak(data.FALLBACK_ANSWER).ask(data.HELP_MESSAGE)
+            response_builder.speak(data_roboti.FALLBACK_MESSAGE).ask(
+                data_roboti.HELP_MESSAGE,
+            )
 
             return response_builder.response
 
@@ -426,8 +399,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speech = "Sorry, there was some problem. Please try again!!"
-        handler_input.response_builder.speak(speech).ask(speech)
+        handler_input.response_builder.speak(data_roboti.EXCEPTION_MESSAGE).ask(
+            data_roboti.EXCEPTION_MESSAGE)
 
         return handler_input.response_builder.response
 

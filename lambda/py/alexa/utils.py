@@ -1,7 +1,7 @@
 import random
-import six
-from ask_sdk_core.handler_input import HandlerInput
-from ask_sdk_core.utils import is_request_type
+# import six
+# from ask_sdk_core.handler_input import HandlerInput
+# from ask_sdk_core.utils import is_request_type
 
 from . import data_roboti as data
 
