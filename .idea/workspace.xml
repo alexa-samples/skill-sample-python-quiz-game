@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="631da5ce-cc72-4983-b288-530aab750ef1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda/py/alexa/data_roboti.py" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/py/alexa/data_roboti.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lambda/py/alexa/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/py/alexa/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lambda/py/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/py/lambda_function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lambda/skill_env/lambda_function.py" beforeDir="false" afterPath="$PROJECT_DIR$/lambda/skill_env/lambda_function.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,19 +15,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="lambda_function.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lambda_function.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lambda/py/lambda_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="188" selection-start-line="188" selection-end-line="188" />
+            <state relative-caret-position="521">
+              <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
               <folding>
                 <element signature="e#247#258#0" expanded="true" />
                 <element signature="e#1195#1655#0" />
                 <element signature="e#1720#2193#0" />
                 <element signature="e#2249#2799#0" />
                 <element signature="e#2855#3494#0" />
-                <element signature="e#3544#6142#0" />
-                <element signature="e#8601#13405#0" />
+                <element signature="e#6286#7247#0" />
                 <element signature="e#13476#14309#0" />
                 <element signature="e#14361#15201#0" />
                 <element signature="e#15261#15940#0" />
@@ -52,8 +51,8 @@
       <file leaf-file-name="en-US-roboti.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/en-US-roboti.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="795">
+              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -61,8 +60,11 @@
       <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4680">
-              <caret line="312" selection-start-line="312" selection-end-line="312" />
+            <state relative-caret-position="930">
+              <caret line="312" lean-forward="true" selection-start-line="312" selection-end-line="312" />
+              <folding>
+                <element signature="e#39#7708#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,8 +72,8 @@
       <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/py/alexa/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="-646">
+              <caret line="113" column="16" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="16" />
               <folding>
                 <element signature="e#93#106#0" expanded="true" />
               </folding>
@@ -82,8 +84,8 @@
       <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/py/alexa/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="660">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -91,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_roboti.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_roboti.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data_roboti.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="861">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -133,9 +135,10 @@
       <find>AI</find>
       <find>IO</find>
       <find>get_item</find>
-      <find>KANSAS</find>
       <find>get_speech</find>
       <find>is_intent_name</find>
+      <find>get_question</find>
+      <find>KANSAS</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -146,8 +149,8 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lambda/py/alexa/data-roboti.py" />
-        <option value="$PROJECT_DIR$/lambda/py/alexa/data_roboti.py" />
         <option value="$PROJECT_DIR$/models/en-US-roboti.json" />
+        <option value="$PROJECT_DIR$/lambda/py/alexa/data_roboti.py" />
         <option value="$PROJECT_DIR$/lambda/py/alexa/utils.py" />
         <option value="$PROJECT_DIR$/lambda/py/lambda_function.py" />
       </list>
@@ -255,7 +258,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -281,32 +284,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/en-US-roboti.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4680">
-          <caret line="312" selection-start-line="312" selection-end-line="312" />
+        <state relative-caret-position="795">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/py/alexa/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="-646">
+          <caret line="113" column="16" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="16" />
           <folding>
             <element signature="e#93#106#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="312" lean-forward="true" selection-start-line="312" selection-end-line="312" />
+          <folding>
+            <element signature="e#39#7708#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data_roboti.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lambda/py/alexa/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="660">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -315,16 +328,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lambda/py/lambda_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        <state relative-caret-position="521">
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
           <folding>
             <element signature="e#247#258#0" expanded="true" />
             <element signature="e#1195#1655#0" />
             <element signature="e#1720#2193#0" />
             <element signature="e#2249#2799#0" />
             <element signature="e#2855#3494#0" />
-            <element signature="e#3544#6142#0" />
-            <element signature="e#8601#13405#0" />
+            <element signature="e#6286#7247#0" />
             <element signature="e#13476#14309#0" />
             <element signature="e#14361#15201#0" />
             <element signature="e#15261#15940#0" />
@@ -333,13 +345,6 @@
             <element signature="e#17404#17608#0" />
             <element signature="e#17666#17848#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lambda/py/alexa/data_roboti.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>

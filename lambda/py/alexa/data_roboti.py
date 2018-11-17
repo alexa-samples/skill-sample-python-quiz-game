@@ -1,6 +1,11 @@
-FACTS = [
+TRUE_OR_FALSE = [
     {'True': 'fact 1 true', 'False': 'fact 1 false'},
     {'True': 'fact 2 true', 'False': 'fact 2 false'},
+    # TODO: ADD MORE
+]
+
+FACTS = [
+    # TODO: ADD STAND-ALONE FACTS
 ]
 
 SKILL_TITLE = 'Eco Minds'
@@ -17,15 +22,21 @@ WRONG_SPEECHCONS = ['Argh', 'Aw man', 'Blarg', 'Blast', 'Boo', 'Bummer',
                     'Mamma mia', 'Oh boy', 'Oh dear', 'Oof', 'Ouch', 'Ruh roh',
                     'Shucks', 'Uh oh', 'Wah wah', 'Whoops a daisy', 'Yikes']
 
-MAX_QUESTIONS = 10
+QUESTION_STARTS = ['Is it true that {}?', 'Do you believe that {}?',
+                   'Is it correct that {}?', 'Is the following fact genuine? {}'
+                   'Is it accurate that {}?', 'Is it correct that {}?',
+                   'Is it right that {}?']
+
+
+MAX_QUESTIONS = 5
 
 WELCOME_MESSAGE = ('Heya! Welcome to the Eco Minds quiz game! You can ask me '
                    'for facts about ecology or you can start a new quiz. What '
                    'would you like to do?')
 
-QUIZ_START_MESSAGE = ('Welcome to the Eco Minds quiz! I will start stating {} '
+QUIZ_START_MESSAGE = ("Ok, let's get it started then! I will start stating {} "
                       'facts, to which you will have to reply with True of '
-                      'False'.format(MAX_QUESTIONS))
+                      'False. The first question is: {}')
 
 SCORE_STATUS = 'Your score is {} out of {}.'
 
@@ -44,3 +55,13 @@ FALLBACK_MESSAGE = 'Sorry, I cannot help you with that. {}'.format(HELP_MESSAGE)
 EXCEPTION_MESSAGE = 'Sorry. An error occurred. Please try again!'
 
 EXIT_MESSAGE = 'Bye! Hope to see you again soon!'
+
+FACT_TEMPLATE = '{}. {}.'
+
+CORRECT_ANSWER = "That's correct!"
+
+INCORRECT_ANSWER = 'Actually,'
+
+ANSWER_TRUE_TEMPLATE = "{}! {} {}."
+
+ANSWER_FALSE_TEMPLATE = "{}! {} {}. {}"

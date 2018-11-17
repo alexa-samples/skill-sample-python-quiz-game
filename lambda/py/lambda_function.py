@@ -112,51 +112,24 @@ class QuizHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In QuizHandler")
-        # TODO: ADD HANDLER FOR ROBOTS
+
         attr = handler_input.attributes_manager.session_attributes
         attr["state"] = "QUIZ"
         attr["counter"] = 0
         attr["quiz_score"] = 0
 
-        question = util.ask_question(handler_input)
+        attr['questions'] = utils.get_questions_for_new_quiz()
+        question = utils.get_question_text(attr['questions'][0])
+        attr['last_question'] = attr['questions'][0]
+        attr['questions'] = attr['question'][1:]
+
+        handler_input.attributes_manager.session_attributes = attr
+
         response_builder = handler_input.response_builder
-        response_builder.speak(data.START_QUIZ_MESSAGE + question)
+        response_builder.speak(data_roboti.QUIZ_START_MESSAGE.format(
+            data_roboti.MAX_QUESTIONS, question
+        ))
         response_builder.ask(question)
-
-        if data.USE_CARDS_FLAG:
-            item = attr["quiz_item"]
-            response_builder.set_card(
-                ui.StandardCard(
-                    title="Question #1",
-                    text=data.START_QUIZ_MESSAGE + question,
-                    image=ui.Image(
-                        small_image_url=util.get_small_image(item),
-                        large_image_url=util.get_large_image(item)
-                    )))
-
-        if util.supports_display(handler_input):
-            item = attr["quiz_item"]
-            item_attr = attr["quiz_attr"]
-            title = "Question #{}".format(str(attr["counter"]))
-            background_img = Image(
-                sources=[ImageInstance(
-                    url=util.get_image(
-                        ht=1024, wd=600, label=item["abbreviation"]))])
-            item_list = []
-            for ans in util.get_multiple_choice_answers(
-                    item, item_attr, data.STATES_LIST):
-                item_list.append(ListItem(
-                    token=ans,
-                    text_content=get_plain_text_content(primary_text=ans)))
-
-            response_builder.add_directive(
-                RenderTemplateDirective(
-                    ListTemplate1(
-                        token="Question",
-                        back_button=BackButtonBehavior.HIDDEN,
-                        background_image=background_img,
-                        title=title,
-                        list_items=item_list)))
 
         return response_builder.response
 
@@ -334,7 +307,6 @@ class RepeatHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In RepeatHandler")
-        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         response_builder = handler_input.response_builder
         if "recent_response" in attr:
@@ -364,7 +336,7 @@ class FallbackIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         logger.info("In FallbackIntentHandler")
         handler_input.response_builder.speak(
-            data.FALLBACK_ANSWER).ask(data.HELP_MESSAGE)
+            data_roboti.FALLBACK_MESSAGE).ask(data_roboti.HELP_MESSAGE)
 
         return handler_input.response_builder.response
 
