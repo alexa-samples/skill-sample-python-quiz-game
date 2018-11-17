@@ -23,7 +23,7 @@ from ask_sdk_model.interfaces.display import (
     BackButtonBehavior, ListItem, BodyTemplate2, BodyTemplate1)
 from ask_sdk_model import ui, Response
 
-from alexa import data, util
+from alexa import data, util, utils, data_roboti
 
 
 # Skill Builder object
@@ -43,8 +43,8 @@ class LaunchRequestHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In LaunchRequestHandler")
-        handler_input.response_builder.speak(data.WELCOME_MESSAGE).ask(
-            data.HELP_MESSAGE)
+        handler_input.response_builder.speak(data_roboti.WELCOME_MESSAGE).ask(
+            data_roboti.HELP_MESSAGE)
         return handler_input.response_builder.response
 
 
@@ -75,7 +75,7 @@ class HelpIntentHandler(AbstractRequestHandler):
         # Resetting session
 
         handler_input.response_builder.speak(
-            data.HELP_MESSAGE).ask(data.HELP_MESSAGE)
+            data_roboti.HELP_MESSAGE).ask(data_roboti.HELP_MESSAGE)
         return handler_input.response_builder.response
 
 
@@ -91,7 +91,7 @@ class ExitIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         logger.info("In ExitIntentHandler")
         handler_input.response_builder.speak(
-            data.EXIT_SKILL_MESSAGE).set_should_end_session(True)
+            data_roboti.EXIT_MESSAGE).set_should_end_session(True)
         return handler_input.response_builder.response
 
 
@@ -112,6 +112,7 @@ class QuizHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In QuizHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         attr["state"] = "QUIZ"
         attr["counter"] = 0
@@ -178,6 +179,7 @@ class DefinitionHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In DefinitionHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         response_builder = handler_input.response_builder
         item, is_resolved = util.get_item(
             slots=handler_input.request_envelope.request.intent.slots,
@@ -239,6 +241,7 @@ class QuizAnswerHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In QuizAnswerHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         response_builder = handler_input.response_builder
 
@@ -364,6 +367,7 @@ class RepeatHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In RepeatHandler")
+        # TODO: ADD HANDLER FOR ROBOTS
         attr = handler_input.attributes_manager.session_attributes
         response_builder = handler_input.response_builder
         if "recent_response" in attr:
@@ -372,7 +376,9 @@ class RepeatHandler(AbstractRequestHandler):
                 cached_response_str, Response)
             return cached_response
         else:
-            response_builder.speak(data.FALLBACK_ANSWER).ask(data.HELP_MESSAGE)
+            response_builder.speak(data_roboti.FALLBACK_MESSAGE).ask(
+                data_roboti.HELP_MESSAGE,
+            )
 
             return response_builder.response
 
@@ -426,8 +432,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
 
-        speech = "Sorry, there was some problem. Please try again!!"
-        handler_input.response_builder.speak(speech).ask(speech)
+        handler_input.response_builder.speak(data_roboti.EXCEPTION_MESSAGE).ask(
+            data_roboti.EXCEPTION_MESSAGE)
 
         return handler_input.response_builder.response
 

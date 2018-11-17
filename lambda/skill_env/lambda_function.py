@@ -23,7 +23,7 @@ from ask_sdk_model.interfaces.display import (
     BackButtonBehavior, ListItem, BodyTemplate2, BodyTemplate1)
 from ask_sdk_model import ui, Response
 
-from alexa import data, util
+from alexa import data, util, utils, data_roboti
 
 
 # Skill Builder object
@@ -43,8 +43,8 @@ class LaunchRequestHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In LaunchRequestHandler")
-        handler_input.response_builder.speak(data.WELCOME_MESSAGE).ask(
-            data.HELP_MESSAGE)
+        handler_input.response_builder.speak(data_roboti.WELCOME_MESSAGE).ask(
+            data_roboti.HELP_MESSAGE)
         return handler_input.response_builder.response
 
 
