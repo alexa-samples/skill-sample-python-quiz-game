@@ -1,0 +1,113 @@
+Metadata-Version: 2.1
+Name: ask-sdk-model
+Version: 1.4.0
+Summary: The ASK SDK Model package provides model definitions, for building Alexa Skills.
+Home-page: https://github.com/alexa/alexa-apis-for-python
+Author: Alexa Skills Kit
+Author-email: ask-sdk-dynamic@amazon.com
+License: Apache 2.0
+Keywords: ASK SDK,Alexa Skills Kit,Alexa,Models
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >2.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*
+Requires-Dist: six (>=1.10)
+Requires-Dist: enum34; python_version == "2.7"
+Requires-Dist: typing; python_version == "2.7"
+
+==============================================
+ASK SDK Model - Model definitions for ASK SDK
+==============================================
+
+ask-sdk-model is the model definitions package for Alexa Skills Kit (ASK) by
+the Software Development Kit (SDK) team for Python. It allows Python developers
+to model the requests, responses and related JSON structures, as defined in
+`ASK Documentation <https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html>`_.
+
+Getting Help
+------------
+
+The model definitions in this package are auto-generated. The issues and pull requests
+on the repository are not monitored and may get closed without investigation. Please use
+these community resources for getting help:
+
+* Use the `ASK SDK <https://github.com/alexa-labs/alexa-skills-kit-sdk-for-python>`_ for building skills and filing bugs.
+* Request and vote for `Alexa features <https://alexa.uservoice.com/forums/906892-alexa-skills-developer-voice-and-vote>`_!
+
+
+=========
+CHANGELOG
+=========
+
+0.1
+---
+
+* Initial release of models.
+
+0.1.1
+~~~~~
+
+* Docstring changes for generated docs.
+
+0.2
+---
+
+* APIs for customer contact permissions (CCP).
+
+0.2.1
+~~~~~
+
+* Bug fixes, removed incorrect models.
+
+0.3.0
+~~~~~
+
+* APIs for getting device timezone, distance measurement, temperature measurement
+
+1.0.0
+-----
+
+* Production release of ASK Models Package.
+
+1.1.0
+~~~~~
+
+* Models for "Consumables" in In-Skill Products.
+
+* APIs for Amazon Pay V2 that includes :
+
+  - No consent token requirement in request.
+  - Have billing address details for eligible Amazon Pay merchants in Response.
+  - Permission scope addition to Permissions object.
+
+* Update Skill Event Models to include additional attributes like 'eventPublishingTime' etc.
+
+1.2.0
+~~~~~
+
+* Models for "PrintRequest" and "ReservationRequest" in Skill Connections.
+
+1.3.0
+~~~~~
+
+* Models for "Alexa Presentation Language". The Alexa Presentation Language
+  (APL) enables you to build interactive voice experiences that include
+  graphics, images, slideshows, and video, and to customize them for
+  different device types.
+
+
+
+1.4.0
+~~~~~~~
+
+This release includes the following:
+- Models for [CanFulfillIntentRequest, for Name-free Interactions](https://developer.amazon.com/docs/custom-skills/implement-canfulfillintentrequest-for-name-free-interaction.html)
+
+
