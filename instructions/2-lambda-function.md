@@ -11,60 +11,73 @@ In the [first step of this guide](1-voice-user-interface.md), we built the Voice
 
     [![Sign In](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-1-sign-in-to-the-console._TTH_.png)](https://console.aws.amazon.com/console/home)
 
-2.  **Choose "Services" at the top of the screen, and type "Lambda" in the search box.**  You can also find it in the list of services.  It is in the "Compute" section.
+2.  **Choose "Services" at the top of the screen, and type "Cloud9" in the search box.**  You can also find it in the list of services.  It is in the "Developer Tools" section.
+
+    [![Cloud9](2-lambda-c9-fig1.png)](https://console.aws.amazon.com/cloud9/home)
+
+3.  **Check your AWS region.** Lambda only works with the Alexa Skills Kit in four regions: US East (N. Virginia), EU (Ireland), and US West (Oregon).  Make sure you choose the region closest to your customers.
+
+    ![Cloud9 Regions](2-lambda-c9-fig2.png)
+
+4.  **Click the "Create environment" button.**
+
+    ![Create Environment](2-lambda-c9-fig3.png)
+
+5.  Enter a name for the Cloud9 Environment and **Click on "Next step".**  "samplePythonQuiz" is sufficient if you don't have another idea for a name.
+
+    ![Environment Name](2-lambda-c9-fig4.png)
+
+6.  Leave the default values for Environment Settings and **Click on "Next step".**
+
+7.  Review the Environment name and settings and **Click on "Create environment".**
+
+    ![Environment Name and Settings](2-lambda-c9-fig5.png)
+
+7.  It will take a few minutes for the Cloud9 Environment to be created.
+
+    ![Environment Creating](2-lambda-c9-fig6.png)
+
+8.  When the Environment is ready, click into the blue Terminal window at the bottom of the IDE and type `git clone https://github.com/samdengler/skill-python-reinvent-quiz-game.git` and hit enter.  This will download the sample skill Git code repository.
+
+    ![Git Clone](2-lambda-c9-fig7.png)
+
+9.  After the code is downloaded, type `cd skill-python-reinvent-quiz-game` and hit enter.
+
+    ![Change Directory](2-lambda-c9-fig8.png)
+
+10. Next, type `pip install -r requirements.txt -t .` and hit enter. This will install the Python library dependencies, including the Alexa Skills Kit.
+
+    ![Install Python Dependencies](2-lambda-c9-fig9.png)
+
+11. On the right navigation, click on AWS Resources and expand **skill-python-reinvent-quiz-game** to reveal the **MyFunction** Lambda function.  Double click on **MyFunction** to see the Alexa Skill Lambda function.
+
+    ![Open Lambda Function](2-lambda-c9-fig10.png)
+
+12. Select the **MyFunction** Lambda function in the right navigation and click the Deploy button to deploy the function in the Lambda service.
+
+    ![Deploy Lambda Function](2-lambda-c9-fig11.png)
+
+13. Open the AWS Console in a new browser window **http://console.aws.amazon.com**.
+
+14. **Choose "Services" at the top of the screen, and type "Lambda" in the search box.**  You can also find it in the list of services.  It is in the "Compute" section.
 
     [![Lambda](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-2-services-lambda._TTH_.png)](https://console.aws.amazon.com/lambda/home)
 
-3.  **Check your AWS region.** Lambda only works with the Alexa Skills Kit in four regions: US East (N. Virginia), EU (Ireland), US West (Oregon) and Asia Pacific (Tokyo).  Make sure you choose the region closest to your customers.
+15. In the list of Lambda Functions, click on the Function that begins with **cloud9-skill-python-reinvent-quiz-game-MyFunction.**
 
-    ![Lambda Regions](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-3-check-region._TTH_.png)
+    ![Open Lambda Function Configuration](2-lambda-c9-fig12.png)
 
-4.  **Click the "Create a Lambda function" button.** It should be near the top of your screen.
+16. **Configure your trigger.** There are many different AWS services that can trigger a Lambda function, but for the purposes of this guide, we need to select "Alexa Skills Kit." from the left hand side.
 
-    ![Create Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/2-4-create-a-lambda-function._TTH_.png)
+    ![Select Trigger](2-lambda-c9-fig13.png)
 
-5.  **Click on "Author from scratch".**  We will configure our Lambda function next.
-    1. These values will only ever be visible to you, but make sure that you name your function something meaningful. "samplePythonQuiz" is sufficient if you don't have another idea for a name.
+    Once you have selected Alexa Skills Kit, scroll down and find the Skill ID verification section.  Although you will want to paste your skill's ID in the Skill ID field, however for this tutorial, click Disable.  Click the **Add** button in the lower right.
 
-    2. From the "Runtime" dropdown select the python version your system supports.  This tutorial and sample code works with either Python 2.7 or 3.6. To check the python version, try the following command in a terminal
-        ```
-        $ python --version
-        Python 2.7.10
-        ```
+17. Click the orange **Save** button in the top right corner.
 
-    3. **Set up your Lambda function role.**  If you haven't done this before, we have a [detailed walkthrough for setting up your first role for Lambda](https://github.com/alexa/alexa-cookbook/blob/master/guides/aws-security-and-setup/lambda-role.md).  If you have done this before, you only need to select the **Existing role**.
+    ![Save Lambda Function](2-lambda-c9-fig14.png)
 
-    4. Click **Create function**.
-
-6.  **Configure your trigger.** There are many different AWS services that can trigger a Lambda function, but for the purposes of this guide, we need to select "Alexa Skills Kit." from the left hand side.
-
-    ![Select Trigger](2-lambda-fig5.png)
-
-    Once you have selected Alexa Skills Kit, scroll down and find the Skill ID verification section.  Although you will want to paste your skill's ID in the Skill ID field, however for this tutorial, click Disable.  Click the **Add** button in the lower right.  Click the orange **Save** button in the top right corner.
-
-7.  **Finish configuring your function**. Click on your function's name (you'll find it in the middle) and scroll to the bottom of the page, you'll see a Cloud9 code editor.
-
-    We have provided the code for this skill [here](../lambda/py). To properly upload this code to Lambda, you'll need to perform the following:
-    
-    1. This skill uses the [ASK SDK for Python](https://github.com/alexa/alexa-skills-kit-sdk-for-python) for development. The skill code is provided in the [lambda_function.py](../lambda/py/lambda_function.py), and the dependencies are mentioned in [requirements.txt](../lambda/py/requirements.txt). Download the contents of the [lambda/py](../lambda/py) folder. 
-    2. On your system, navigate to the lambda folder and install the dependencies in a new folder called “skill_env” using the following command:
-    
-        ```
-        pip install -r py/requirements.txt -t skill_env
-        ```
-        
-    3. Copy the contents of the `lambda/py` folder into the `skill_env` folder. 
-    
-        ```
-        cp -r py/* skill_env/
-        ```
-    
-    4. Zip the contents of the `skill_env` folder. Remember to zip the **contents** of the folder and **NOT** the folder itself.
-    5. On the AWS Lambda console, change the **code entry type** drop-down to **Upload a .ZIP file**, upload the zip created in the previous step and click on **Save**.
-    
-    *(Optional)* Follow the ASK Python SDK [Getting Started](https://alexa-skills-kit-python-sdk.readthedocs.io/en/latest/GETTING_STARTED.html#adding-the-ask-sdk-for-python-to-your-project) documentation, to check alternative ways of installing the sdk and deploying to AWS Lambda console.
-
-8. (Optional) Click the **Configure test events** dropdown menu on the top of the page.
+18. (Optional) Click the **Configure test events** dropdown menu on the top of the page.
   
     1. Select 'Alexa Start Session' from the 'Event Template' dropdown.
     2. Type `LaunchRequest` into the 'Event Name' field.
@@ -72,7 +85,7 @@ In the [first step of this guide](1-voice-user-interface.md), we built the Voice
     4. Click the **Test** button at the top of the page.
     5. You should see a light green box with the message: *Execution result: succeeded* at the top of the page.
 
-9. **As a final step, copy the ARN value from the top right corner of the screen.** You will need this value in the next section of this guide.
+19. **As a final step, copy the ARN value from the top right corner of the screen.** You will need this value in the next section of this guide.
 
   ![ARN](2-lambda-fig7.png)
 
