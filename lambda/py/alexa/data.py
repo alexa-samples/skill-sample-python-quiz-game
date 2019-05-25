@@ -1,5 +1,120 @@
 # -*- coding: utf-8 -*-
 
+CHALLANGES = [
+    {
+        'category': 'Animal',
+        'answer': '`inu`',
+        'question': 'Which option is dog?',
+        'w1': '`neko`'
+        'w2': '`buta`'
+    },
+    {
+        'category': 'Animal',
+        'answer': '`inu`',
+        'question': 'which animal pees on the lamppost when we walk him?',
+        'w2': '`Tori`',
+        'w1': '`Shika`',
+    },
+    {
+        'category': 'Animal',
+        'answer': 'uma',
+        'question': 'which of the following animals is the `Mottomo hayai`?',
+        'w2': 'kame',
+        'w1': 'ari',
+    },
+    {
+        'category': 'Animal',
+        'answer': '`Monkī`',
+        'question': 'what animal eats `bananas` and `Ki ni noboru`?',
+        'w2': '`Buta`',
+        'w1': '`Ushi`',
+    },
+    {
+        'category': 'Animal',
+        'answer': 'lion',
+        'question': 'what animal has a `Juzō` in egypt?',
+        'w2': 'monkey',
+        'w1': 'giraffe',
+    },
+    {
+        'category': 'Animal',
+        'answer': '`Ushi`',
+        'question': '`Chīzu` is produced from which animal?',
+        'w2': '`Neko`',
+        'w1': '`Raion`',
+    },
+    {
+        'category': 'Animal',
+        'answer': '`Zō`',
+        'question': 'What is the `Mottomo ōkī` animal?',
+        'w2': '`Yagi`',
+        'w1': '`Mausu`',
+    },
+    {
+        'category': 'Fruits',
+        'answer': 'watermelon',
+        'question': 'which `Furūtsu` has the most `Tane`?',
+        'w2': 'cherry',
+        'w1': 'banana',
+    },
+    {
+        'category': 'Fruits',
+        'answer': 'strawberry',
+        'question': 'The inside of this fruit is `Aka`',
+        'w2': 'mango',
+        'w1': 'apple',
+    },
+    {
+        'category': 'Fruits',
+        'answer': '`Momo`',
+        'question': 'Which fruit is used as a bum emoji?',
+        'w2': '`Cherī`',
+        'w1': '`Painappuru`',
+    }
+    {
+        'category': 'Fruits',
+        'answer': '`banana`',
+        'question': 'which fruit is very long and slender?',
+        'w2': '`Painappuru`',
+        'w1': '`Ringo`',
+    },
+    {
+        'category': 'Colours',
+        'answer': '`Aka`',
+        'question': 'Newton discovered `Jūryoku` when an apple fell on his head. What colour was the `Ringo`?',
+        'w2': '`Murasakino`',
+        'w1': '`Shiro`',
+    },
+    {
+        'category': 'Colours',
+        'answer': 'red',
+        'question': 'what colour is the planet `Kasei`?',
+        'w2': 'green',
+        'w1': 'purple',
+    },
+    {
+        'category': 'Colours',
+        'answer': 'blue',
+        'question': "What colour is donald duck's `Bōshi`?",
+        'w2': 'red',
+        'w1': 'yellow',
+    },
+    {
+        'category': 'Colours',
+        'answer': 'blue',
+        'question': 'If Alice is travelling 30km per hour south at noon, and Bob is travelling 15km per hour north, `Sora no iro wa nanidesu ka?`',
+        'w2': 'yellow',
+        'w1': 'green',
+    },
+    {
+        'category': 'Colours',
+        'answer': '`Aka`',
+        'question': "What's Donald Trump's `Sukinairo`?",
+        'w2': '`Midori`',
+        'w1': '`Orenji`',
+    }
+]
+
 STATES_LIST = [
     {
         'abbreviation': 'MS', 'capital': 'Jackson',
