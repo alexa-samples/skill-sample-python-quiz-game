@@ -29,4 +29,4 @@ We use will use the Skill builder UI to build the Skill although the quiz itself
 This simple sample shows how to use render template directives in the alexa 
 skill built using ASK Python SDK.
 
-[![Get Started](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_get_started._TTH_.png)](/instructions/1-voice-user-interface.md)
+[![Get Started](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_get_started._TTH_.png)](./instructions/setup-vui-alexa-hosted.md)
