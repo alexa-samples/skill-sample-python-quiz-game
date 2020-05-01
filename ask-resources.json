@@ -7,7 +7,7 @@
       },
       "code": {
         "default": {
-          "src": "lambda/py"
+          "src": "./lambda/py"
         }
       },
       "skillInfrastructure": {
